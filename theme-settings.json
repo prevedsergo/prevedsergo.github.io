@@ -2,7 +2,7 @@
   "theme": {
     "color": {
       "documentation-intro-fill": "#009296",
-      "documentation-intro-foreground": "white"
+      "documentation-intro-foreground": "#ffffff"
     }
   }
 }
