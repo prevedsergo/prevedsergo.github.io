@@ -1,1 +1,182 @@
-<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.ico"><link rel="mask-icon" href="/favicon.svg" color="#333333"><title>Documentation</title><script>var baseUrl = "/"</script><script defer="defer" src="/js/chunk-vendors.bdb7cbba.js"></script><script defer="defer" src="/js/index.5b6366e8.js"></script><link href="/css/index.d0b63544.css" rel="stylesheet"></head><body data-color-scheme="auto"><noscript><style>.noscript{font-family:"SF Pro Display","SF Pro Icons","Helvetica Neue",Helvetica,Arial,sans-serif;margin:92px auto 140px auto;text-align:center;width:980px}.noscript-title{color:#111;font-size:48px;font-weight:600;letter-spacing:-.003em;line-height:1.08365;margin:0 auto 54px auto;width:502px}@media only screen and (max-width:1068px){.noscript{margin:90px auto 120px auto;width:692px}.noscript-title{font-size:40px;letter-spacing:0;line-height:1.1;margin:0 auto 45px auto;width:420px}}@media only screen and (max-width:735px){.noscript{margin:45px auto 60px auto;width:87.5%}.noscript-title{font-size:32px;letter-spacing:.004em;line-height:1.125;margin:0 auto 35px auto;max-width:330px;width:auto}}#loading-placeholder{display:none}</style><div class="noscript"><h1 class="noscript-title">This page requires JavaScript.</h1><p>Please turn on JavaScript in your browser and refresh the page to view its content.</p></div></noscript><div id="app"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Framework Documentation</title>
+  <style>
+    :root {
+      --bg-color: #f5f5f7;
+      --card-bg: #ffffff;
+      --text-color: #1d1d1f;
+      --link-color: #0071e3;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      --radius: 16px;
+      --transition: 0.25s ease;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #1c1c1e;
+        --card-bg: #2c2c2e;
+        --text-color: #f5f5f7;
+        --link-color: #0a84ff;
+        --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #6e6e73;
+      font-size: 1.1rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      header p {
+        color: #a1a1a6;
+      }
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        box-shadow var(--transition),
+        transform var(--transition),
+        background-color var(--transition),
+        color var(--transition);
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--text-color);
+    }
+
+    .card p {
+      color: #515154;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .card p {
+        color: #d1d1d6;
+      }
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--link-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .card a:hover {
+      color: #005bb5;
+    }
+
+    footer {
+      text-align: center;
+      color: #86868b;
+      font-size: 0.9rem;
+      padding: 3rem 1rem;
+      transition: color var(--transition);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      footer {
+        color: #a1a1a6;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Framework Documentation</h1>
+    <p>Explore detailed API and guides for mDL frameworks.</p>
+  </header>
+
+  <main>
+    <!-- Framework 1 -->
+    <div class="card">
+      <h2>MdlHolder Framework</h2>
+      <p>
+        The framework for acting as a mobile Driving Licence (mDL) holder compliant with ISO/IEC 18013-5.
+      </p>
+      <a href="MdlHolder/documentation/mdlholder/">View Documentation →</a>
+    </div>
+
+    <!-- Framework 2 -->
+    <div class="card">
+      <h2>MdlReader Framework</h2>
+      <p>
+        The framework for acting as a mobile Driving Licence (mDL) reader compliant with ISO/IEC 18013-5.
+      </p>
+      <a href="MdlReader/documentation/mdlreader/">View Documentation →</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 X INFOTECH
+  </footer>
+
+  <script>
+    // Плавная анимация появления карточек
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".card");
+      cards.forEach((card, index) => {
+        setTimeout(() => card.classList.add("visible"), 200 * index);
+      });
+    });
+  </script>
+</body>
+</html>
